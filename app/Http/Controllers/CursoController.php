@@ -14,6 +14,6 @@ class CursoController extends Controller
 
     }
     public function show($curso){
-        return view('cursos.show',compact('curso'));//['curso' => $curso]
+        return view('cursos.show',['curso' => $curso]);//compact('curso')
     }
 }

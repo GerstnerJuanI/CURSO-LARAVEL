@@ -14,13 +14,13 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', 'HomeController');
 
-Route::get('cursos', [CursoController::class, 'index']);
+Route::get('cursos','CursoController@index'); // 7.4
 
-Route::get('cursos/create', [CursoController::class, 'create']);
+Route::get('cursos/create', 'CursoController@create');
 
-Route::get('cursos/{curso}', [CursoController::class, 'show']);
+Route::get('cursos/{curso}', 'CursoController@show');
 
 /*Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria = null) {
     if ($categoria) {
