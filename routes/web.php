@@ -14,19 +14,31 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', 'HomeController');
+Route::get('/', 'HomeController')->name('home');
 
-Route::get('cursos','CursoController@index')->name('cursos.index'); // 7.4
+// Route::get('cursos','CursoController@index')->name('cursos.index'); // 7.4
 
-Route::get('cursos/create', 'CursoController@create')->name('cursos.create');
+// Route::get('cursos/create', 'CursoController@create')->name('cursos.create');
 
-Route::get('cursos/{id}', 'CursoController@show')->name('cursos.show');
+// Route::get('cursos/{curso}', 'CursoController@show')->name('cursos.show');
 
-Route::post('cursos', 'CursoController@store')->name('cursos.store');
+// Route::post('cursos', 'CursoController@store')->name('cursos.store');
 
-Route::get('cursos/{curso}/edit', 'CursoController@edit')->name('cursos.edit');
+// Route::get('cursos/{curso}/edit', 'CursoController@edit')->name('cursos.edit');
 
-Route::put('cursos/{curso}','CursoController@update')->name('cursos.update');
+// Route::put('cursos/{curso}','CursoController@update')->name('cursos.update');
+
+// Route::delete('cursos/{curso}', 'CursoController@destroy')->name('cursos.destroy');
+
+Route::resource('cursos', 'CursoController');
+
+Route::view('nosotros', 'nosotros')->name('nosotros');
+
+//Route::resource('asignaturas', 'CursoController')->parameters(['asignaturas' => 'curso'])->names('cursos'); 
+//                                                         // esto se usa cuando queres cambiar el nombre del
+//                                                         // direccionamiento sin cambiarlo en todos los archivos
+
+//Route::resource('cursos', CursoController::class);
 
 /*Route::get('cursos/{curso}/{categoria?}', function ($curso,$categoria = null) {
     if ($categoria) {

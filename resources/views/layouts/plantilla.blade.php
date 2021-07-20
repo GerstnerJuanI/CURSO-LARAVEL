@@ -10,11 +10,37 @@
     {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
     <!-- fivicon -->
     <!-- estilos -->
+    <style>
+        .active{
+            color: red;
+            font-weight: white;
+        }
+    </style>
 </head>
 
 <body>
     <!-- header -->
     <!-- nav -->
+
+    <header>
+        <nav>
+            
+            <li>
+                <a href="{{route('home')}}" class="{{request()->routeIs('home') ? 'active' :/*else*/'' }}">Home</a>
+            </li>
+            <li>
+                <a href="{{route('cursos.index')}}" class="{{request()->routeIs('cursos.*') ? 'active' :/*else*/'' }}">cursos</a>
+            </li>
+            <li>
+                <a href="{{route('nosotros')}}" class="{{request()->routeIs('nosotros') ? 'active' :/*else*/'' }}">Nosotros</a>
+            </li>
+                
+
+            
+        </nav>
+    </header>
+
+
     @yield('content')
 
     <!-- footer -->
