@@ -12,7 +12,7 @@
             <a href="{{route('nosotros')}}" class="{{request()->routeIs('nosotros') ? 'active' :/*else*/'' }}">Nosotros</a>
         </li>
             
-
+        <li><a href="{{route('contactanos.index')}}" class="{{request()->routeIs('contactanos.index') ? 'active' :/*else*/'' }}">Contactanos</a></li>
         
     </nav>
 </header>
