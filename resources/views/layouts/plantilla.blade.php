@@ -22,29 +22,13 @@
     <!-- header -->
     <!-- nav -->
 
-    <header>
-        <nav>
-            
-            <li>
-                <a href="{{route('home')}}" class="{{request()->routeIs('home') ? 'active' :/*else*/'' }}">Home</a>
-            </li>
-            <li>
-                <a href="{{route('cursos.index')}}" class="{{request()->routeIs('cursos.*') ? 'active' :/*else*/'' }}">cursos</a>
-            </li>
-            <li>
-                <a href="{{route('nosotros')}}" class="{{request()->routeIs('nosotros') ? 'active' :/*else*/'' }}">Nosotros</a>
-            </li>
-                
-
-            
-        </nav>
-    </header>
+    @include('layouts.partials.header')
 
 
     @yield('content')
 
     <!-- footer -->
-
+    @include('layouts.partials.footer')
     <!-- script -->
 </body>
 

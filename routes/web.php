@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +37,12 @@ Route::resource('cursos', 'CursoController');
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
 
+Route::get('contactanos', function () {
+    $correo = new ContactanosMailable;
+    Mail::to('jiger360@gmail.com')->send($correo);
+
+    return "Correo enviado";
+});
 //Route::resource('asignaturas', 'CursoController')->parameters(['asignaturas' => 'curso'])->names('cursos'); 
 //                                                         // esto se usa cuando queres cambiar el nombre del
 //                                                         // direccionamiento sin cambiarlo en todos los archivos
